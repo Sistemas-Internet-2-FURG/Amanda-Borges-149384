@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Funcionária</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Register Funcionária</h1>
+    </header>
+    <div class="container">
+        <form method="POST" action="{{ register_func }}">
+            <input type="text" name="username" placeholder="Nome de usuário" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <input type="text" name="espec" placeholder="Especialidade" required>
+            <button type="submit">Registrar</button>
+        </form>
+        <a href="/login" class="back-link">Voltar para Login</a>
+    </div>
+</body>
+</html>

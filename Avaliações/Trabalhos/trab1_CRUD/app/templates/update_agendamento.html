@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Agendamento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Atualizar Agendamento</h1>
+    </header>
+    <div class="container">
+        <form method="POST" action="{{ url_for('main.update_agendamento', id=agendamento.id) }}">
+            <label for="data_hora">Data e Hora:</label>
+            <input type="datetime-local" id="data_hora" name="data_hora" value="{{ agendamento.data_hora }}" required>
+            
+            <label for="cliente_id">Cliente:</label>
+            <select id="cliente_id" name="cliente_id" required>
+                {% for cliente in clientes %}
+                <option value="{{ cliente.id }}" {% if cliente.id == agendamento.cliente_id %}selected{% endif %}>{{ cliente.nome }}</option>
+                {% endfor %}
+            </select>
+            
+            <label for="funcionaria_id">Funcionária:</label>
+            <select id="funcionaria_id" name="funcionaria_id" required>
+                {% for funcionaria in funcionarias %}
+                <option value="{{ funcionaria.id }}" {% if funcionaria.id == agendamento.funcionaria_id %}selected{% endif %}>{{ funcionaria.nome }}</option>
+                {% endfor %}
+            </select>
+            
+            <label for="servico">Serviço:</label>
+            <input type="text" id="servico" name="servico" value="{{ agendamento.servico }}" required>
+            
+            <button type="submit">Atualizar</button>
+
+            <div class="back-link">
+                <a href="/show_agendamento" class="back-link">Voltar para Agendamentos</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

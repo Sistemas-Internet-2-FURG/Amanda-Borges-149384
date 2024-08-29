@@ -1,0 +1,123 @@
+/* styles.css */
+
+/* Estilo geral do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; /* Branco suave para o fundo */
+    color: #333; /* Texto preto suave */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #ff69b4; /* Rosa forte */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilo do contêiner principal */
+.container {
+    padding: 20px;
+    text-align: center; /* Alinhamento centralizado */
+}
+
+/* Estilo do formulário */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Mantém o formulário com o tamanho de conteúdo */
+    width: 100%;
+    max-width: 400px; /* Largura máxima do formulário */
+    margin-bottom: 20px; /* Espaço abaixo do formulário */
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Bordas cinza */
+    border-radius: 4px;
+}
+
+input[type="text"], input[type="password"], select {
+    background-color: #f9f9f9; /* Fundo cinza claro */
+}
+
+button {
+    background-color: #ff69b4; /* Rosa forte */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff1493; /* Rosa escuro ao passar o mouse */
+}
+
+/* Estilo dos links de registro */
+.register-links {
+    margin-top: 20px;
+}
+
+.register-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+    background-color: #ff69b4; /* Rosa forte */
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.register-button:hover {
+    background-color: #ff1493; /* Rosa escuro ao passar o mouse */
+}
+
+/* styles.css */
+
+/* Estilo base para botões */
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Estilo específico para o botão de editar */
+.btn-edit {
+    background-color: #ffcccb; /* Rosa claro */
+    border: 1px solid #ff9999; /* Rosa suave */
+}
+
+.btn-edit:hover {
+    background-color: #ff9999; /* Rosa suave ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(255, 99, 71, 0.3); /* Sombra leve */
+}
+
+/* Estilo específico para o botão de excluir */
+.btn-delete {
+    background-color: #ff4d4d; /* Vermelho */
+    border: 1px solid #cc0000; /* Vermelho escuro */
+}
+
+.btn-delete:hover {
+    background-color: #cc0000; /* Vermelho escuro ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(204, 0, 0, 0.3); /* Sombra leve */
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>Integrando HTML ao Flask</title> 
+    </head>
+
+    <body> 
+        <h2 style="text-align:center">Integrando HTML ao Flask</h2>
+        <hr>
+    
+        {{nome}}<br>
+        {{teste}}
+        <ol>
+            {% for item in teste: %}
+            <li>{{item}}</li>
+            {% endfor %}
+        </ol>
+    </body>
+
+</html>

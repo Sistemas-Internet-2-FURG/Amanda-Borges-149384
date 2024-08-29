@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Agenda</h1>
+    </header>
+    <div class="container">
+        <!-- Seção de Listagem de Agendamentos -->
+        <section id="listagem">
+            <h2>Agendamentos</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Data e Hora</th>
+                        <th>Cliente</th>
+                        <th>Funcionária</th>
+                        <th>Serviço</th>
+                        <th>Ações</th> <!-- Adicionado para as ações -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for agendamento in agendamentos %}
+                    <tr>
+                        <td>{{ agendamento.id }}</td>
+                        <td>{{ agendamento.data_hora }}</td>
+                        <td>{{ agendamento.cliente.nome }}</td>
+                        <td>{{ agendamento.funcionario.nome }}</td>
+                        <td>{{ agendamento.servico }}</td>
+                        <td>
+                            <!-- Botão de Editar -->
+                            <a href="{{ url_for('main.update_agendamento', id=agendamento.id) }}" class="btn btn-edit">Editar</a>
+                            <!-- Botão de Excluir -->
+                            <a href="{{ url_for('main.delete_agendamento', id=agendamento.id) }}" class="btn btn-delete">Excluir</a>
+                        </td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Seção de Cadastro de Agendamentos -->
+        <section id="cadastro de Agendamentos">
+            <h2>Cadastrar Novo Agendamento</h2>
+            <form method="POST" action="{{ url_for('main.show_agendamento') }}">
+                <label for="data_hora">Data e Hora:</label>
+                <input type="datetime-local" id="data_hora" name="data_hora" required>
+                
+                <label for="cliente_id">Cliente:</label>
+                <select id="cliente_id" name="cliente_id" required>
+                    {% for cliente in clientes %}
+                    <option value="{{ cliente.id }}">{{ cliente.nome }}</option>
+                    {% endfor %}
+                </select>
+                
+                <label for="funcionaria_id">Funcionária:</label>
+                <select id="funcionaria_id" name="funcionaria_id" required>
+                    {% for funcionaria in funcionarias %}
+                    <option value="{{ funcionaria.id }}">{{ funcionaria.nome }}</option>
+                    {% endfor %}
+                </select>
+                
+                <label for="servico">Serviço:</label>
+                <input type="text" id="servico" name="servico" required>
+                
+                <button type="submit">Cadastrar</button>
+
+                <div class="back-link">
+                    <a href="/login" class="back-link">Voltar para Login</a>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

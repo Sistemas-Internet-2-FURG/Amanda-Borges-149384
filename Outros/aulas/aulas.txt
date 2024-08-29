@@ -1,0 +1,23 @@
+18/07/24
+
+Trabalho do 1º bimestre (mateade da avaliação) vai ser um CRUD:
+    (C) Create
+    (R) Read
+    (U) Update
+    (D) Delete
+
+    Tecnologias/recursos permitidas:
+        Flask
+        Banco de Dados
+        Html/Css
+        Js
+
+Ainda assim, teremos uma prova nesse primeiro bimestre!
+
+___
+
+Possível trabalho do segundo semestre: Implementação de um proxy.
+Considerando o trabalho do ano passado que foi a implementação de 
+um proxy, onde os alunos criaram um banco de dados de palavrão e,
+a cada palavrão escrito na página, esse era substituído por uma 
+palavra não ofensiva (ex. caralho<->catapimbas)

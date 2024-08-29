@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+    <div class="container">
+        <form method="POST" action="{{ login }}">
+            <input type="text" name="username" placeholder="Nome de usuário" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <select name="tipo_usuario" required>
+                <option value="cliente">Cliente</option>
+                <option value="funcionaria">Funcionária</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+        <div class="register-links">
+            <a href="/register_user" class="register-button">Registre-se como Cliente</a>
+            <a href="/register_func" class="register-button">Registre-se como Funcionária</a>
+        </div>
+    </div>
+</body>
+</html>
